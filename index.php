@@ -1,5 +1,3 @@
-<?php include 'request.php' ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,6 +12,7 @@
     <title>Link shortening</title>
 </head>
 <body>
+    <?php require_once 'request.php' ?>
     <div class="container text-center">
         <div class="row mt-5">
             <h1>Short URL</h1>
