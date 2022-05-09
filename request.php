@@ -7,16 +7,26 @@ if (!$conn)
     die("Ошибка подключения к базе данных: \n" . mysqli_connect_error());
 
 if (isset($_GET['long_link']))
-    $request = trim($_GET['long_link']);
+    $request = $conn->real_escape_string(trim($_GET['long_link']));
 
 if (!empty($request)) {
+
     $sel = $conn->query("SELECT * FROM links WHERE link = '" . $request . "'");
 
-    if ($sel->num_rows > 0) {
-        echo 'Найдена ссылка';
+    if ($sel->num_rows == 0) {
+        $token = token_gen();
+
+        $ins = $conn->query("INSERT INTO links (link, token) VALUES ('" . $request . "', '" . $token . "')");
+
+        if ($ins) {
+            echo 'Добавлена ссылка';
+        }
+        else {
+            echo 'Ссылка не добавлена';
+        }
     }
     else {
-        echo 'Этой ссылки в бд нет';
+        echo 'Эта ссылка уже есть в базе данных';
     }
 
 }
