@@ -9,13 +9,25 @@
           rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
           crossorigin="anonymous">
-    <title>Link shortening</title>
+    <title>Short URL</title>
+
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: black;
+        }
+    </style>
 </head>
 <body>
     <?php require_once 'request.php' ?>
     <div class="container text-center">
         <div class="row mt-5">
-            <h1>Short URL</h1>
+            <a href="/">
+                <h1>Short URL</h1>
+            </a>
         </div>
         <div class="row">
             <form action="" method="get">
