@@ -32,7 +32,7 @@
         <div class="row">
             <form action="" method="get">
                 <div class="input-group mb-3">
-                    <input type="text" name="long_link" class="form-control" placeholder="Enter the link here" aria-describedby="button-addon2">
+                    <input type="text" value="<?= $GLOBALS['short_link'] ?>" name="long_link" class="form-control" placeholder="Enter the link here" aria-describedby="button-addon2">
                     <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Shorten URL</button>
                 </div>
             </form>
